@@ -1,0 +1,11 @@
+__pycache__/
+.idea/
+
+app/__pycache__/
+
+settings.py
+structure.txt
+dKCrpSebPIM.jpg
+
+data.txt
+data.json
