@@ -50,7 +50,7 @@ async def today(callback: types.CallbackQuery):
     await callback.answer()
     now = datetime.now()
     data = get_current_schedule(2, 9, 2024)
-    await callback.message.answer(f"<b>Сегодня:</b>\n<i>Вид активности</i>\n\n{[item for item in data if item["day"] == now.day and item["month"] == now.month and item["year"] == now.year][0]["activity"]}", parse_mode=ParseMode.HTML)
+    await callback.message.answer(f"<b>Сегодня:</b>\n<i>Вид активности</i>\n\n{[item for item in data if item['day'] == now.day and item['month'] == now.month and item['year'] == now.year][0]['activity']}", parse_mode=ParseMode.HTML)
 
 @router.callback_query(F.data == "KB_TOMORROW")
 async def tomorrow(callback: types.CallbackQuery):
@@ -59,7 +59,7 @@ async def tomorrow(callback: types.CallbackQuery):
     data = get_current_schedule(2, 9, 2024)
     delta = timedelta(days=1)
     tomorrow_date = now+delta
-    await callback.message.answer(f"<b>Завтра:</b>\n<i>Вид активности</i>\n\n{[item for item in data if item["day"] == tomorrow_date.day and item["month"] == tomorrow_date.month and item["year"] == tomorrow_date.year][0]["activity"]}", parse_mode=ParseMode.HTML)
+    await callback.message.answer(f"<b>Завтра:</b>\n<i>Вид активности</i>\n\n{[item for item in data if item['day'] == tomorrow_date.day and item['month'] == tomorrow_date.month and item['year'] == tomorrow_date.year][0]['activity']}", parse_mode=ParseMode.HTML)
 
 @router.callback_query(F.data == "KB_THIS_MONTH")
 async def this_month(callback: types.CallbackQuery):
